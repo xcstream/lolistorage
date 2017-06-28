@@ -1,0 +1,22 @@
+{
+  "name": "lolistorage",
+  "version": "1.0.0",
+  "description": "a little loli",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xcstream/lolistorage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xcstream/lolistorage/issues"
+  },
+  "homepage": "https://github.com/xcstream/lolistorage",
+  "dependencies": {
+    "md5": "^2.2.1"
+  }
+}
