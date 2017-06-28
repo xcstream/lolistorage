@@ -3,24 +3,24 @@ a simple persistence kv storage
 
 example
 
-    var lolistorage = require('lolistorage');
     async function test() {
         try{
             var loli = await lolistorage.init()
             await loli.setkv('name','niconico')
-            await loli.setkv('mimi','123')
+            await loli.setkv('pants','green')
             await loli.setkv('age','12')
             await loli.setkv('age','13') //change value
-            await loli.setkv('mimi', undefined) //unset value
+            await loli.setkv('pants', undefined) //unset value
 
             var name = await loli.getkv('name')
             var age = await loli.getkv('age')
             var unknown = await loli.getkv('unknown')
-            var mimi = await loli.getkv('mimi')
+            var pants = await loli.getkv('pants')
 
-            console.log(`I am ${name}, ${age} years old , weight is ${unknown}`)
+            console.log(`I am ${name}, ${age} years old , weight is ${unknown}, pants ${pants}`)
         }catch (e){
-            console.log(e)
+            console.log('e1',e)
         }
     }
+
     test()
