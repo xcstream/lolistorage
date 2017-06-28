@@ -4,12 +4,11 @@ function leagal_loli(name) {
     return Object.prototype.toString.call(name) === "[object String]"
 }
 function name_loli(k) {
-    return global['_lolistorage_dir'] + '/' + md5('lolistorage' + k).substr(0,2) + '.lo'
+    return __dirname + '/' + md5('lolistorage' + k).substr(0,2) + '.lo'
 }
 module.exports = {
-    init:async function(path){
-        var dir = path || '.lolis'
-        global['_lolistorage_dir'] = dir
+    init:async function(){
+        var dir = __dirname +'/.lolis'
         await fs.ensureDir(dir);
         return Promise.resolve(this)
     },
