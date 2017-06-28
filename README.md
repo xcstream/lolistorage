@@ -1,4 +1,4 @@
-#lolistorage
+# lolistorage
 a simple persistence kv storage
 
 install
