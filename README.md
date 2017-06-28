@@ -1,7 +1,13 @@
 #lolistorage
 a simple persistence kv storage
 
+install
+
+    npm i lolistorage
+
 example
+
+    var lolistorage = require('./lolistorage');
 
     async function test() {
         try{
