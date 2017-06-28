@@ -11,12 +11,6 @@ module.exports = {
         var dir = path || '.lolis'
         global['_lolistorage_dir'] = dir
         await fs.ensureDir(dir);
-        await fs.ensureFile(dir + '/index.loli')
-        try{
-            var res = await fs.readJson(dir + '/index.loli')
-        }catch (e){
-            var res = await fs.writeJson(dir + '/index.loli' , { keys:'default' })
-        }
         return Promise.resolve(this)
     },
     setkv:async function(k,v){
@@ -24,20 +18,18 @@ module.exports = {
             return Promise.reject('key must be a string')
         }
         var fn = name_loli(k)
-        await fs.ensureFile(fn)
-        try{
-            var muufmuuf = await fs.readJson(fn)
-            muufmuuf[k] = v
-            var res = await fs.writeJson(fn, muufmuuf )
-        }catch (e){
+        if(!await fs.exists(fn)){
             var muufmuuf = {}
             muufmuuf[k] = v
             var res = await fs.writeJson(fn, muufmuuf )
-            if(!res) {
-                Promise.reject(e)
-            }
+            return Promise.resolve(true)
+        }else{
+            var muufmuuf = await fs.readJson(fn)
+            muufmuuf[k] = v
+            await fs.writeJson(fn, muufmuuf )
+            return Promise.resolve(true)
         }
-        return Promise.resolve(true)
+
     },
     getkv:async function(k){
         if( !leagal_loli(k)){

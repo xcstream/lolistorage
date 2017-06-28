@@ -15,19 +15,14 @@ async function test() {
         var unknown = await loli.getkv('unknown')
         var pants = await loli.getkv('pants')
 
-        console.log(`I am ${name}, ${age} years old , weight is ${unknown}`)
-        console.log(`${pants}`)
-
+        console.log(`I am ${name}, ${age} years old , weight is ${unknown}, pants ${pants}`)
     }catch (e){
         console.log('e1',e)
     }
 }
 
-try{
-    test()
-}catch(e){
-    console.log('e2',e)
-}
+test()
+
 
 
 
