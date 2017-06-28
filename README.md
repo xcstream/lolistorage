@@ -7,7 +7,7 @@ install
 
 example
 
-    var lolistorage = require('./lolistorage');
+    var lolistorage = require('lolistorage');
 
     async function test() {
         try{
