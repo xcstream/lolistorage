@@ -3,7 +3,7 @@ a simple persistence kv storage
 
 install
 
-    npm i lolistorage
+    npm i lolistorage -S
 
 example
 
