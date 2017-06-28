@@ -1,6 +1,6 @@
 {
   "name": "lolistorage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a little loli",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/xcstream/lolistorage",
   "dependencies": {
+    "fs-extra": "^3.0.1",
     "md5": "^2.2.1"
   }
 }
