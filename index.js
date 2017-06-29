@@ -35,7 +35,10 @@ module.exports = {
             return Promise.reject('key must be a string')
         }
         var fn = name_loli(k)
-        await fs.ensureFile(fn)
+
+        if(!await fs.exists(fn)){
+            return Promise.resolve(undefined)
+        }
         try{
             var muufmuuf = await fs.readJson(fn)
             return Promise.resolve(muufmuuf[k])
